@@ -1,11 +1,11 @@
 const { Server } = require('socket.io');
-const { demoAssetsURL, devAssetsURL } = require('../constants/urls');
+const { demoAssetsURL, devAssetsURL, prodAssetsURL } = require('../constants/urls');
 const { timeFormat } = require('../utils/dateFormat');
 const { config } = require('../app');
 
 const io = new Server(config.SOCKET_PORT, {
   cors: {
-    origin: [demoAssetsURL, devAssetsURL]
+    origin: [demoAssetsURL, devAssetsURL, prodAssetsURL]
   }
 });
 
